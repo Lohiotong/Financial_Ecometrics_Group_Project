@@ -63,8 +63,4 @@ print("📌 行业统一选出的 Top20 因子：")
 print(top_20_factors)
 
 top_20_factors.to_frame(name='importance').to_csv("data/result/selected_factors.csv", index=True)
-print("✅ 已保存 Top 20 因子到 data/result/selected_factors.csv")
-
-# 保存带有衍生变量的训练数据，供后续 IC 检验或建模用
-train_df.to_csv("data/interim/cleaned/with_features_train_data.csv", index=False)
-print("✅ 衍生变量训练数据已保存到：data/interim/cleaned/with_features_train_data.csv")
+print("已保存 Top 20 因子到 data/result/selected_factors.csv")
