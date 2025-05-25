@@ -78,7 +78,7 @@ df_results.to_csv(os.path.join(result_dir, "backtest_summary.csv"), index=False)
 df_selected = pd.DataFrame({'Selected_Stocks': selected})
 df_selected.to_csv(os.path.join(result_dir, "selected_stocks.csv"), index=False)
 
-print("\u2705 \u56de\u6d4b\u5b8c\u6210，结果保存在：", result_dir)
+print("结果保存在：", result_dir)
 
 # Step 5: 构造全公司预测净值序列
 df_all_predictions = pd.concat(all_results)  # all_results 中每项是 df，每家公司含 Strategy_Value, Benchmark_Value
