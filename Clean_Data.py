@@ -7,7 +7,7 @@ df['Dates'] = pd.to_datetime(df['Dates'], errors='coerce')
 # === Step 2: 删除缺失值比例 > 30% 的列 ===
 missing_ratio = df.isnull().mean()
 df = df.drop(columns=missing_ratio[missing_ratio > 0.3].index)
-print(f"✅ 删除高缺失列后剩余列数: {df.shape[1]}")
+print(f"删除高缺失列后剩余列数: {df.shape[1]}")
 
 # === Step 3: 数值列填充中位数 ===
 num_cols = df.select_dtypes(include='number').columns
@@ -21,4 +21,4 @@ df = df.sort_values(by=['Company', 'Dates']).reset_index(drop=True)
 
 # === Step 6: 保存清洗后的数据 ===
 df.to_csv("data/interim/cleaned/cleaned_all_companies_long.csv", index=False)
-print("✅ 已保存清洗后的数据：data/interim/cleaned/cleaned_all_companies_long.csv")
+print("已保存清洗后的数据：data/interim/cleaned/cleaned_all_companies_long.csv")
